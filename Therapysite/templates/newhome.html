@@ -1,0 +1,25 @@
+{% extends 'newbase.html' %}
+        
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% for i in  form %}
+<div class="container shadow mb-5 mt-5 py-3" style="background:white">
+<h2 class="text-center" style="color:navy;">Welcome to Wecareu, {{i.name}}</h2>
+<p class="text-center" style="font-size:1.3em">"Not until we are lost do we begin to understand ourselves"- Henry David Thoreau</p>
+</div><br>
+{% endfor %}
+<h3 class="text-center">How it Works</h3><br>
+<div class="text-center">
+    <h5>Book A Counselling plan</h5>
+    <i class="bi bi-arrow-down fa-2x" style="color:orange;"></i>
+    <h5>Choose A Counselor & Pick A Time</h5>
+    <i class="bi bi-arrow-down fa-2x" style="color:orange;"></i>
+    <h5>Join The Session & Chat Afterwards</h5>
+    <i class="bi bi-arrow-down fa-2x" style="color:orange;"></i>
+    <h5>Reshedule Or Change Counselor if Needed</h5>
+
+
+
+{% endblock %}

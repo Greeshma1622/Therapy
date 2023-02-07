@@ -1,0 +1,10 @@
+.bg-image{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(https://thumbs.dreamstime.com/b/college-student-lying-down-grass-working-laptop-campus-48623650.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color:rgb(244, 86, 24);
+    display:block;
+    justify-content: center;
+    align-items: center;
+}

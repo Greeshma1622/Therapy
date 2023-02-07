@@ -1,0 +1,56 @@
+{% extends 'newbase.html'%}
+
+{% block title %}profile{% endblock %}
+
+{% block content%}
+
+{% for i in  form %}
+<h1 class="text-center">Hello {{i.name}}</h1>
+<h3 class="text-center" style="color:rgb(244, 86, 24);">Welcome to WECAREU</h3><br>
+
+
+<h5 class="text-center">Personal Information</h5>
+{% comment %} <hr><br> {% endcomment %}
+
+
+
+<div class=" square rounded p-4 container text-center shadow mt-4" style="width:450px; height:400px;justify-content: center; align-items: center; background:lightgoldenrodyellow;">
+<div class="pt-3 form-group text-black ">
+    <label for="name">Name</label>
+    <input type="text" name="name"class="form-control" id="name" placeholder="{{i.name}}">
+  </div><br>
+  <div class="form-group text-black">
+    <label for="email">Email</label>
+    <input type="text" name="email"class="form-control" id="email" placeholder="{{i.email}}" onchange="validmail()">
+  </div><br>
+  <div class="form-group text-black">
+    <label for="phone number">phone number</label>
+    <input type="text" name="phno"class="form-control" id="phno" placeholder="{{i.phno}}"  onchange="validphno()">
+  </div><br>
+  <div class="form-group text-black">
+    <label for="password">Date of birth</label>
+    <input type="date" name="password" class="form-control"id="pass1" placeholder="Date of Birth" onchange="validpass()">
+  </div><br>
+</div><br>
+{% endfor %}
+
+
+
+<div class="container" style="background:white">
+<h3 class="text-center">wan't to edit your profile?</h3>
+<div class="container d-flex justify-content-center">
+  <a href="{% url 'editprofile' %}" style="color:rgb(244, 86, 24);" class="btn btn-outline-dark">Edit Profile</a>
+</div>
+</div><br>
+
+{% for i in form  %}
+
+<div class="container shadow mb-5 py-3" style="background:white">
+<h5 class="text-center">Deleting an account will remove all your personal information.This action cannot be undone</h5>
+<div class="container d-flex justify-content-center">
+<a href="{% url 'delete'%}?delete={{i.email}}" class="btn btn-danger btn-lg">Delete my account</a> 
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,181 @@
+{% comment %} {% extends 'newbase.html' %}
+        
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<h1> You can chat with your counselor here</h1>
+{% comment %} <form id="post-form" method="POST" action="checkview">
+    {% csrf_token %}
+    <label>Room Name</label>
+    <input type="text" name="room_name" id="room_name" width="100px" />
+    <label>Username</label>
+    <input type="text" name="username" id="username" width="100px" />
+    <input type="submit" value="Enter Room">
+</form>  {% endcomment %}
+
+   {% comment %} <div class=" square rounded p-4 container  shadow text-center justify-content-center mx-auto mt-5 mb-5 " style="width:500px; height:320px; background:beige;">
+  <form id="post-form" method="POST" action="checkview"> {% endcomment %}
+    {% comment %} {% for message in messages %} 
+    <h3 class="text-center text-success">{{message}}</h3>
+    {% endfor %} {% endcomment %}
+    {% comment %} {% csrf_token %} {% endcomment %}
+    {% comment %} {% for i in form %} {% endcomment %}
+{% comment %}  
+     <div class="form-group ">
+        <label for="exampleInputEmail1"> Room Name</label>
+        <input type="text" class="form-control" name="room_name" id="room_name" width="100px"  aria-describedby="emailHelp"/>
+    </div>
+
+    <div class="form-group ">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" class="form-control" name="room_name" id="room_name" width="100px"  aria-describedby="emailHelp"/>
+    </div><br>
+    <input type="submit" value="Enter Room" style="background:navy; color:white;">
+  </form>
+</div> 
+{% endblock %}  {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+{% comment %} body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+} {% endcomment %}
+
+{% comment %} .container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+} {% endcomment %}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-md " style="background:lavender;">
+      <div class="container">
+        <img src="https://cdn3.vectorstock.com/i/1000x1000/42/42/mental-health-care-logo-design-head-leaf-hand-vector-28434242.jpg" width="80" height="80" >
+        <div>
+        <h3 class="header-text  d-flex ml-1" style='color:navy;'> WECAREU</h3>
+        <h6 class="sub-text " style="color:rgb(244, 86, 24);">Your happy place!</h6>
+        </div>
+        <div
+          class="collapse navbar-collapse justify-content-start col-md-8 navbar-collapse-3">
+          <ul class="navbar-nav justify-content-center  fw-bold">
+            <li class="nav-item">
+              <a style="color:black;" class="nav-link " href="{% url 'newhome'%}">DASHBOARD</a>
+            </li>
+            <li class="nav-item active">
+              <a style="color:black;" class="nav-link  " href="{% url 'profile'%}">PROFILE </a>
+            </li>
+              <li class="nav-item">
+              <a style="color:black;" class="nav-link  " href="{% url 'Chat'%}">CHAT</a>
+            </li>
+            <li class="nav-item">
+              <a style="color:black;" class="nav-link  " href="{% url 'Booking'%}">BOOKING</a>
+            </li> 
+            </ul>
+        </div> 
+  
+      </div>
+      <div class="text-center">
+      <a  style="color:rgb(244, 86, 24); background:white;"class=" shadow mr-5 btn btn-outline-dark btn-white " style="margin-left:2%" href="{% url 'signup'%}">Log out</a>
+      </div>
+    </nav>
+  </div>
+
+<div align="center">
+    <h2>Django Chat</h2>
+</div>
+
+
+<div class="container">
+    <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    </style>
+
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label>Room Name</label>
+        <input type="text" name="room_name" id="room_name" width="100px" />
+        <label>Username</label>
+        <input type="text" name="username" id="username" width="100px" />
+        <input type="submit" onclick="window.location.href='../room'" value="Enter Room">
+    </form>
+</div>
+
+
+
+</body>
+
+
+</html>
